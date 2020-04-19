@@ -33,14 +33,15 @@ export default class TicketForm extends React.Component {
 
         axios.get('/customers')
             .then(response => {
-                const customers = response.data
-                const customerOptions = []
-                for (let i = 0; i < customers.length; i++) {
-                    customerOptions.push({ value: customers[i]['_id'], label: customers[i]['name'] })
+                const customersResponse = response.data
+                const customerOptionsResponse = []
+                for (let i = 0; i < customersResponse.length; i++) {
+                    customerOptionsResponse.push({ value: customersResponse[i]['_id'], label: customersResponse[i]['name'] })
                 }
                 this.setState(() =>
                     ({
-                        customers: customers, customerOptions
+                        customers: customersResponse,
+                        customerOptions: customerOptionsResponse
                     }))
             })
         axios.get('/departments')
@@ -103,11 +104,10 @@ export default class TicketForm extends React.Component {
                 value: employee._id, label: employee.name
             }))
         }
-
         return (
-            <div className='page-content'>
+            <div >
                 {
-                    <Container style={{ marginTop: '70px' }}>
+                    <Container>
                         <Col sm="12" md={{ size: 6, offset: 3 }} style={{ textAlign: 'center' }}>
                             <Card>
                                 <Form>

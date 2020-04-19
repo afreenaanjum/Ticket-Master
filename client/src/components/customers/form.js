@@ -43,7 +43,7 @@ class CustomerForm extends React.Component {
 
     render() {
         return (
-            <div className='page-content'>
+            <div>
                 <Container style={{ marginTop: '71px' }}>
                     <Col sm="12" md={{ size: 6, offset: 3 }} style={{ textAlign: 'center' }}>
                         <Card>

@@ -67,9 +67,9 @@ class EmployeeForm extends React.Component {
 
     render() {
         return (
-            <div className='page-content'>
+            <div>
                 {this.state.departments.length != 0 ?
-                    <Container style={{ marginTop: '70px' }}>
+                    <Container>
                         <Col sm="12" md={{ size: 6, offset: 3 }} style={{ textAlign: 'center' }}>
                             <Card>
                                 <h3 style={{ marginTop: '20px' }}>Add/Edit Employee</h3>
@@ -99,7 +99,7 @@ class EmployeeForm extends React.Component {
                                 </Form>
                             </Card>
                         </Col>
-                    </Container> : <p>..loading</p>}
+                    </Container> : <p>No departments were found. Add some departrments to create employees for respectice department.</p>}
             </div>
         )
     }

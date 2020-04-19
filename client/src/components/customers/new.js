@@ -13,7 +13,6 @@ class CustomerNew extends React.Component {
     }
 
     handleSubmit(formData) {
-        console.log(formData)
         axios.post('/customers', formData)
             .then(response => {
                 console.log(response.data);

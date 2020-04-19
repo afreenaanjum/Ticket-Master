@@ -15,7 +15,6 @@ class DepartmentNew extends React.Component {
     handleSubmit(formData) {
         axios.post('/departments', formData)
             .then(response => {
-                console.log(response.data)
                 if (response.data.hasOwnProperty('errors')) {
                     alert(response.data.message)
                 } else {

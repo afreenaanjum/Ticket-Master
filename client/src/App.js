@@ -71,7 +71,6 @@ class App extends React.Component {
           <Route path='/tickets/show/:id' component={TicketShow} exact={true} />
           <Route path='/tickets/new' component={TicketNew} exact={true} />
           <Route path='/tickets/edit/:id' component={TicketEdit} exact={true} />
-
         </div>
       </BrowserRouter>
     )

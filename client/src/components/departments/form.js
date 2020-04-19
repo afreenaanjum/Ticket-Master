@@ -27,7 +27,7 @@ class DepartmentForm extends React.Component {
 
     render() {
         return (
-            <div className='page-content'>
+            <div>
                 <Form onSubmit={this.handleSubmit} style={{ marginBottom: '20px' }}>
                     <label> Name
                         <Input type='text' onChange={this.handleNameChange} value={this.state.name} />

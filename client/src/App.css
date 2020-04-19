@@ -1,6 +1,5 @@
 * {
   max-width: 100%;
-  overflow-x: hidden;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -111,6 +110,7 @@
     }
     .sidenav {
       width: 50px;
+      margin-top: 57px;
     }
     .sidenav a {
       font-size: 18px; 
