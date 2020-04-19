@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise
 
-mongoose.connect(`mongodb://localhost:27017/ticket-master`, {useNewUrlParser : true})
+mongoose.connect(`mongodb://localhost:27017/ticket-master`, { useNewUrlParser: true })
     .then(() => {
         console.log("Connected to Db")
     })
@@ -10,4 +10,4 @@ mongoose.connect(`mongodb://localhost:27017/ticket-master`, {useNewUrlParser : t
         console.log("Error connecting to Db", err)
     })
 
-    module.exports = mongoose
+module.exports = mongoose

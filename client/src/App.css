@@ -1,47 +1,131 @@
+* {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-brand a {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+  font-family: Alegra;
+}
+
+.nav-brand a:hover {
+  text-decoration: none;
+  color: white;
+}
 
 /* The sidebar menu */
 .sidenav {
-    margin-top: 70px;
+    margin-top: 71px;
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 170px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    width: 180px; /* Set the width of the sidebar */
+    position: absolute; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
-    left: 0;
+    bottom: 0;
     background-color: #d8d6dd; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
+    /* padding-top: 20px; */
     
   }
   
   /* The navigation menu links */
   .sidenav a {
-    padding: 20px 20px 20px 20px;
+    padding: 20px 20px;
     text-decoration: none;
     font-size: 20px;
     color: black;
     display: block;
     font-family: 'Alegreya', serif;
+    display: flex;
+    align-items: center;
   }
   
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover {
-    color: #f1f1f1;
+    background-color: #f1f1f1;
+
+  }
+
+  .sidenav span {
+    padding: 0px 10px;
+    font-size: 20px;
+    color: black;
+    font-family: 'Alegreya', serif;
   }
   
   /* Style page content */
   .page-content {
-    margin-left: 200px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-    margin-top : 10px;
+    margin-left: 180px; /* Same as the width of the sidebar */
+    padding: 0px 60px;
+    margin-top : 40px;
+    text-align: center;
+    
+  }
+  .page-content h3 {
+    text-align: center;
+    padding: 10px 0px;
+    margin: 0;
+  }
+
+  .page-content a {
+    text-align: center;
+    padding: 10px 0px;
+    margin: 0;
+  }
+
+
+  .page-content p {
+    text-align: center;
   }
   
   .select-width{
     width : 214.86px;
   }
-  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+
+  @media screen and (max-width: 1024px) {
+    .sidenav {
+      width: 180px;
+    }
+    .sidenav a {
+      font-size: 18px; 
+    }
+    .page-content {
+      margin-left: 180px; /* Same as the width of the sidebar */
+      padding: 0px 10px;
+      margin-top : 10px;
+    }
   }
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-width: 450px) {
+
+    .nav-brand a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      font-family: Alegra;
+    }
+    .sidenav {
+      width: 50px;
+    }
+    .sidenav a {
+      font-size: 18px; 
+      padding: 10px 10px;
+    }
+    .sidenav span{
+      display: none;
+    }
+    .page-content {
+      margin-left: 50px; /* Same as the width of the sidebar */
+      padding: 0px 10px;
+      margin-top : 10px;
+    }
+  }
+
+  
+  
   

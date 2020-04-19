@@ -39,7 +39,7 @@ class EmployeeShow extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='page-content'>
                 {!this.state.isLoading &&
                     <div>
                         <Container style={{ marginTop: '70px' }}>

@@ -13,8 +13,10 @@ class CustomerNew extends React.Component {
     }
 
     handleSubmit(formData) {
+        console.log(formData)
         axios.post('/customers', formData)
             .then(response => {
+                console.log(response.data);
                 if (response.data.hasOwnProperty('errors')) {
                     alert(response.data.message)
                 } else {

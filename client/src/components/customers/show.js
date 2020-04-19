@@ -37,7 +37,7 @@ class CustomerShow extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='page-content'>
                 <Container style={{ marginTop: '70px' }}>
                     <Col sm="12" md={{ size: 6, offset: 3 }} style={{ textAlign: 'center' }}>
                         <Card>

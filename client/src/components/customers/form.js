@@ -43,8 +43,8 @@ class CustomerForm extends React.Component {
 
     render() {
         return (
-            <div >
-                <Container style={{ marginTop: '70px' }}>
+            <div className='page-content'>
+                <Container style={{ marginTop: '71px' }}>
                     <Col sm="12" md={{ size: 6, offset: 3 }} style={{ textAlign: 'center' }}>
                         <Card>
                             <h3 style={{ marginTop: '20px' }}>Add/Edit Customer</h3>

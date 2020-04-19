@@ -49,8 +49,8 @@ class DepartmentList extends React.Component {
                 this.setState({ departments })
             })
             .catch(err => {
-                // console.log(err)
-                this.props.history.push('/users/login')
+                console.log(err)
+                // this.props.history.push('/users/login')
             })
     }
 
@@ -61,7 +61,7 @@ class DepartmentList extends React.Component {
                 <Button style={{ backgroundColor: 'green', marginBottom: '10px' }} onClick={this.handleAdd}><FaPlusSquare size={22} style={{ paddingRight: '5px' }} />Add Department</Button>
                 {this.state.isNew && <DepartmentForm handleSubmit={this.handleSubmit} />}
                 {this.state.departments.length != 0 ?
-                    <Table striped bordered style={{ width: '1000px' }}>
+                    <Table striped bordered responsive>
                         <thead style={{ fontWeight: 'bold' }}>
                             <tr>
                                 <td>Name</td>
@@ -79,7 +79,7 @@ class DepartmentList extends React.Component {
                                     )
                                 })}
                         </tbody>
-                    </Table> : <p>...Loading</p>}
+                    </Table> : <p>No departments were found. Please add some.</p>}
             </div>
         )
     }

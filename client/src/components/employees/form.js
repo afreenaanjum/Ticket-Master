@@ -67,7 +67,7 @@ class EmployeeForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='page-content'>
                 {this.state.departments.length != 0 ?
                     <Container style={{ marginTop: '70px' }}>
                         <Col sm="12" md={{ size: 6, offset: 3 }} style={{ textAlign: 'center' }}>

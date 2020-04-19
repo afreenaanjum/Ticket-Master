@@ -21,7 +21,8 @@ class TicketList extends React.Component {
                 this.setState({ tickets })
             })
             .catch(err => {
-                this.props.history.push('/users/login')
+                console.log(err)
+                // this.props.history.push('/users/login')
             })
     }
 
@@ -36,7 +37,7 @@ class TicketList extends React.Component {
                 </Button>
                 {
                     this.state.tickets.length != 0 ?
-                        <Table striped bordered style={{ width: '1000px' }}>
+                        <Table striped bordered responsive>
                             <thead style={{ fontWeight: 'bold' }}>
                                 <tr>
                                     <td>TicketCode</td>
@@ -64,7 +65,7 @@ class TicketList extends React.Component {
                                     })}
 
                             </tbody>
-                        </Table> : <p>...Loading</p>
+                        </Table> : <p>No tickets were found. Please add some.</p>
                 }
             </div >
         )

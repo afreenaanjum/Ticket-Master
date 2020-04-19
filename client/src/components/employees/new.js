@@ -26,7 +26,7 @@ class EmployeeNew extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='page-content'>
                 <EmployeeForm handleSubmit={this.handleSubmit} />
             </div>
         )

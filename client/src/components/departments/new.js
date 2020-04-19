@@ -27,7 +27,7 @@ class DepartmentNew extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='page-content'>
                 <h2>Add Department</h2>
                 <DepartmentForm handleSubmit={this.handleSubmit} />
             </div>

@@ -20,7 +20,8 @@ class EmployeeList extends React.Component {
                 this.setState({ employees })
             })
             .catch(err => {
-                this.props.history.push('/users/login')
+                console.log(err);
+                // this.props.history.push('/users/login')
             })
     }
 
@@ -32,7 +33,7 @@ class EmployeeList extends React.Component {
 
                 {
                     this.state.employees.length != 0 ?
-                        <Table striped bordered style={{ width: '1000px' }}>
+                        <Table striped bordered responsive>
                             <thead style={{ fontWeight: 'bold' }}>
                                 <tr>
                                     <td>Name</td>
@@ -57,7 +58,7 @@ class EmployeeList extends React.Component {
                                     })}
 
                             </tbody>
-                        </Table> : <p>...Loading</p>
+                        </Table> : <p>No employees were found. Please add some.</p>
                 }
             </div >
         )

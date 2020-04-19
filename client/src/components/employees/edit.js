@@ -36,10 +36,10 @@ class EmployeeEdit extends React.Component {
                 }
             })
     }
-    
+
     render() {
         return (
-            <div>
+            <div className='page-content'>
                 {(!this.state.isLoading) && <EmployeeForm employee={this.state.employee} isEdit={true} handleSubmit={this.handleSubmit} />}
             </div>
         )

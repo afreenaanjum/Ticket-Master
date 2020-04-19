@@ -23,6 +23,11 @@ import TicketEdit from './components/tickets/edit'
 
 import './App.css'
 import { Navbar, NavbarBrand } from 'reactstrap';
+import { MdDashboard } from "react-icons/md";
+import { FaBuilding, FaUsers, FaUserTie } from "react-icons/fa";
+import { GiTicket } from "react-icons/gi";
+
+
 
 
 
@@ -33,17 +38,17 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Navbar style={{ backgroundColor: 'black' }} light expand="md">
-            <NavbarBrand style={{ color: 'white ', fontSize: '30px', fontFamily: 'Alegra' }}>Ticket-Master</NavbarBrand>
+          <Navbar style={{ backgroundColor: 'black' }} light expand="true">
+            <NavbarBrand className="nav-brand"><Link to='/'>Ticket-Master</Link></NavbarBrand>
           </Navbar>
           <nav className='sidenav'>
-            <Link to='/'>Dash Board</Link>
-            <Link to='/customers'>Customers</Link>
-            <Link to='/departments'>Departments</Link>
-            <Link to='/employees'>Employees</Link>
-            <Link to='/tickets'>Tickets</Link>
+            <Link to='/'><MdDashboard /><span>DashBoard</span></Link>
+            <Link to='/customers'><FaUsers /><span>Customers</span></Link>
+            <Link to='/departments'><FaBuilding /><span>Departments</span></Link>
+            <Link to='/employees'><FaUserTie /><span>Employees</span></Link>
+            <Link to='/tickets'><GiTicket /><span>Tickets</span></Link>
           </nav>
-          
+
 
           <Route path='/' component={TicketList} exact={true} />
 
