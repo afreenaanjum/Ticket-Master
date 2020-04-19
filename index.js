@@ -4,7 +4,7 @@ const router = require('./config/routes')
 const cors = require('cors')
 
 const app = express()
-const port = 3005
+const port = 3005 || process.env.port
 
 app.use(express.static(__dirname + '/public'));
 app.use(express.json())
