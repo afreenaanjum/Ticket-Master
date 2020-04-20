@@ -99,7 +99,7 @@ export default class TicketForm extends React.Component {
 
     render() {
         if (this.state.departmentSelected.length !== 0) {
-            var filteredEmployees = this.state.employees.filter((employee) => employee.department._id == this.state.departmentSelected['value'])
+            var filteredEmployees = this.state.employees.filter((employee) => employee.department._id === this.state.departmentSelected['value'])
             var employeeOptions = filteredEmployees.map(employee => ({
                 value: employee._id, label: employee.name
             }))

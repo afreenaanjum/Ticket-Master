@@ -15,7 +15,7 @@ class EmployeeShow extends React.Component {
     }
 
     handleRemove() {
-        const confirm = window.confirm('Are you sure?')
+        const confirm = window.confirm('Are you sure?All the tickets associated with this department will also be deleted')
         if (confirm) {
             const id = this.props.match.params.id
             axios.delete(`/employees/${id}`)

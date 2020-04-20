@@ -37,7 +37,7 @@ module.exports.update = (req, res) => {
         })
 }
 
-module.exports.destroy = (req, res) => {
+module.exports.destroy = async (req, res) => {
     const id = req.params.id
     Employee.findByIdAndDelete(id)
         .then(employee => {
@@ -47,4 +47,5 @@ module.exports.destroy = (req, res) => {
                 res.status('404').json({})
             }
         })
+    await Ticket.deleteMany({ department: { _id: id } })
 }

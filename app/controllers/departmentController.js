@@ -1,22 +1,26 @@
 const Department = require('../models/department')
+const Employee = require('../models/employee')
+const Ticket = require('../models/ticket')
 
-module.exports.list =  (req,res) => {
+
+
+module.exports.list = (req, res) => {
     Department.find()
-        .then( (department) =>{
+        .then((department) => {
             res.json(department)
         })
 }
 
-module.exports.create= (req, res) => {
+module.exports.create = (req, res) => {
     const data = req.body
     const department = new Department(data)
     department.save()
-        .then((department) =>{
+        .then((department) => {
             res.json(department)
         })
 }
 
-module.exports.show = (req,res) => {
+module.exports.show = (req, res) => {
     const id = req.params.id
     Department.findById(id)
         .then((department) => {
@@ -24,27 +28,30 @@ module.exports.show = (req,res) => {
         })
 }
 
-module.exports.update = (req, res) => {
+module.exports.update = async (req, res) => {
     const id = req.params.id
     const body = req.body
-    Department.findByIdAndUpdate(id, {$set : body} , {new : true, runValidators : true})
+    Department.findByIdAndUpdate(id, { $set: body }, { new: true, runValidators: true })
         .then((department) => {
-            if(department){
+            if (department) {
                 res.json({})
-            }else{
+            } else {
                 res.json(department)
             }
         })
 }
 
-module.exports.destroy = (req, res) => {
+module.exports.destroy = async (req, res) => {
     const id = req.params.id
-    Department.findByIdAndDelete(id)
+    Department.remove({ _id: id })
         .then(department => {
-            if(department){
+            if (department) {
                 res.json(department)
-            }else{
+            } else {
                 res.status('404').json({})
             }
         })
+
+    await Employee.deleteMany({ department: { _id: id } })
+    await Ticket.deleteMany({ department: { _id: id } })
 }

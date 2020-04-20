@@ -36,7 +36,7 @@ class CustomerList extends React.Component {
                     </Link>
                 </Button>
 
-                {this.state.customers.length != 0 ?
+                {this.state.customers.length !== 0 ?
                     <Table striped bordered responsive >
                         <thead style={{ fontWeight: 'bold' }}>
                             <tr>

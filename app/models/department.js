@@ -1,18 +1,27 @@
 const mongoose = require('mongoose')
+const Employee = require('../models/employee')
 
 const Schema = mongoose.Schema
 
 const departmentSchema = new Schema({
-    name : {
+    name: {
         type: String,
-        required : true
+        required: true
     },
-    createdAt : {
-        type : Date,
-        default : Date.now()
+    createdAt: {
+        type: Date,
+        default: Date.now()
     }
 })
 
-const Department = mongoose.model('Department',departmentSchema)
+// Delete employees when department is deleted using middlewares
+// departmentSchema.pre('remove', function (next) {
+//     console.log("inside middleware")
+//     const department = this
+//     Employee.deleteMany({ department: department })
+//     next()
+// })
+
+const Department = mongoose.model('Department', departmentSchema)
 
 module.exports = Department

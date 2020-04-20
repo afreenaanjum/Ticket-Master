@@ -32,7 +32,7 @@ class EmployeeList extends React.Component {
                 <Button style={{ backgroundColor: 'green', marginBottom: '10px' }}><Link style={{ color: 'white', textDecoration: 'none' }} to='/employees/new'><FaPlusSquare size={22} style={{ paddingRight: '5px' }} />Add Employee</Link></Button>
 
                 {
-                    this.state.employees.length != 0 ?
+                    this.state.employees.length !== 0 ?
                         <Table striped bordered responsive>
                             <thead style={{ fontWeight: 'bold' }}>
                                 <tr>
