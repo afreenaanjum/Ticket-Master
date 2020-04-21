@@ -15,7 +15,7 @@ class CustomerList extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/customers')
+        axios.get('/customer')
             .then(response => {
                 const customers = response.data
                 this.setState({ customers })
