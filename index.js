@@ -14,14 +14,12 @@ app.use('/', router)
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// if (process.env.NODE_ENV === 'production') {
-// 	app.use(express.static('client/build'));
-// }
-
-app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+	app.get('*', (request, response) => {
+		response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+	});
+}
 
 const port = process.env.PORT || 3005;
 app.listen(port, () => {
