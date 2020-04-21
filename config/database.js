@@ -7,9 +7,8 @@ const CONNECTION_URI = process.env.MONGOLAB_URI ||
 
 mongoose.connect(CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
-        if (process.env == 'production') {
+        if (process.env.NODE_ENV === 'production') {
             console.log(process.env.MONGOLAB_URI + 'connected to DB');
-
         }
         console.log("Connected to Db")
     })
