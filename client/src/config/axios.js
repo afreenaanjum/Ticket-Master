@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
 const axios = Axios.create({
-    baseURL: 'https://ticket-master-2019.herokuapp.com:' + process.env.PORT
+    baseURL: ''
     // baseURL: 'http://localhost:3005'
 })
 
